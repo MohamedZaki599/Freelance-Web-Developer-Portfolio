@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+  --gold: #C9A227;
+  --bg: #0A0A0A;
+  --bg-card: #171717;
+  --bg-accent: #3D2817;
+  --text: #F5F0E8;
+  --text-muted: rgba(245, 240, 232, 0.7);
+  --border: rgba(201, 162, 39, 0.2);
+}
+
+/* Light mode = inverted for this project */
+.light-mode {
+  --bg: #F5F0E8;
+  --bg-card: #EBE3D5;
+  --bg-accent: #D4C5A9;
+  --text: #0A0A0A;
+  --text-muted: rgba(10, 10, 10, 0.65);
+  --border: rgba(201, 162, 39, 0.3);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Tajawal', Cairo, 'Segoe UI', Tahoma, Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+::selection { background: #c9a227; color: #0a0a0a; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(201, 162, 39, 0.35); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.7s ease-out both; }
+.animate-glow { animation: glow 3s ease-in-out infinite; }
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+
+.font-display { font-family: 'Playfair Display', 'Tajawal', serif; }
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.4), 0 0 80px rgba(201, 162, 39, 0.15);
+}

@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  --primary: #2563EB;
+  --primary-light: #60A5FA;
+  --accent: #0EA5E9;
+  --bg: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text: #0F172A;
+  --text-muted: #64748B;
+  --border: #E0F2FE;
+}
+
+.dark {
+  --primary: #60A5FA;
+  --primary-light: #93C5FD;
+  --accent: #38BDF8;
+  --bg: #0F172A;
+  --bg-card: #1E293B;
+  --text: #F1F5F9;
+  --text-muted: #94A3B8;
+  --border: #1E293B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #0f172a;
+}
+
+/* Luxury animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Decorative noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.font-display {
+  font-family: 'Playfair Display', 'Tajawal', serif;
+}

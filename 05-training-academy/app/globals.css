@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  --primary-violet: #7C3AED;
+  --secondary-violet: #6D28D9;
+  --accent-orange: #F97316;
+  --bg-violet: #FAFAFA;
+  --text-slate: #111827;
+  --card-bg: #FFFFFF;
+  --border-color: #EDE9FE;
+}
+
+:root.dark {
+  color-scheme: dark;
+  --primary-violet: #A78BFA;
+  --secondary-violet: #8B5CF6;
+  --accent-orange: #FB923C;
+  --bg-violet: #1A1325;
+  --text-slate: #F9FAFB;
+  --card-bg: #2A2138;
+  --border-color: #3C3152;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-violet);
+  color: var(--text-slate);
+  font-family: 'Tajawal', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Luxury animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Selection colors */
+::selection {
+  background: var(--primary-violet);
+  color: #FFFFFF;
+}
+
+/* Noise background overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 9999;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
