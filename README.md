@@ -55,5 +55,5 @@ npm run theme:build
 
 ## ✍️ مطور البورتفوليو (Author)
 **Mohamed Zaki-Dev**
-- **GitHub:** [https://github.com/Mohamed-Zaki-Dev](https://github.com/Mohamed-Zaki-Dev)
+- **GitHub:** [https://github.com/MohamedZaki599](https://github.com/MohamedZaki599)
 - **Portfolio / Website:** [https://mohamed-zaki-dev.vercel.app](https://mohamed-zaki-dev.vercel.app)
